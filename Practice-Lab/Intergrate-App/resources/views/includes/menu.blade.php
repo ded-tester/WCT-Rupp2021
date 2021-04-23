@@ -20,6 +20,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('page.contact')}}">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('products.index')}}">Products</a>
+          </li>
         @if(Auth::user())
           <li class="nav-item">
           <form id ="frmlogout" action="{{url('/logout')}}" method ="POST">

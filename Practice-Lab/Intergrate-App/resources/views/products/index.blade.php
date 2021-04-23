@@ -1,0 +1,37 @@
+@extends('layouts.app')
+
+@section('content')
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h2>Products</h2>
+       <thead>
+        <table class="table table-border">
+           <tr>
+            <th>#</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Unit Price</th>
+            <th>Quantity in Stock</th>
+            <th>
+             <a class="btn btn-primary" href="{{route('products.create')}}">+New</a>
+            </th>            
+        </tr>
+       </thead>
+       
+       <tbody>
+       @foreach($products as $product )
+          <tr>
+              <td>{{$loop->index +1}} </td>
+              <td>{{$product->category->name}}</td>
+              <td>{{$product->unit_price}}</td>
+              <td>{{$product->qty_in_stock}}</td>
+              <td>Edit and Delete</td>
+          </tr>
+
+       @endforeach
+
+       </tbody>
+    </table>
+ </div>
+  <hr>
+@endsection

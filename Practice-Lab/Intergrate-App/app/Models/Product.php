@@ -15,4 +15,9 @@ class Product extends Model
         'unit_price',
         'qty_in_stock',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

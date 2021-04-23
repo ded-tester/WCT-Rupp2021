@@ -19,6 +19,8 @@ Route::group(['web'], function(){
     Route::get('/post/{id}',[App\Http\Controllers\PostController::class,'show'])->name('show.detail');
 
     Route::post('/forms/contact',[App\Http\Controllers\FormController::class, 'contactSubmit'])->name('forms.contact_submit');
+
+    Route::resource('products',App\Http\Controllers\ProductController::class);
 });
 
 Auth::routes();
